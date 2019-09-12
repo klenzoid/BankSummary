@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 // Functions
 import { loadFile } from "./services/loadFile";
-import { uniqueDates } from "./services/uniqueDates";
 import { sortTransactions } from "./services/sortTransactions";
 import { sumTransactions } from "./services/sumTransactions";
 
@@ -20,40 +19,27 @@ function App() {
   // raw file, should be csv
   const [file, setFile] = useState("");
 
-  // converted file via Papaparse package
-  const [JSONFile, setJSONFile] = useState({});
-
-  // object with unique dates as keys
-  const [dates, setDates] = useState(null);
-
   const [allInfo, setAllInfo] = useState({
     dayTotal: null,
     datedTransactions: null
   });
+
+  useEffect(() => {
+    setAllInfo({ ...allInfo, datedTransactions: loadFile(file) });
+  }, [file]);
+
   function onChange(e) {
     e.preventDefault();
     let loadedFile = e.target.files[0];
     setFile(loadedFile);
   }
-  function onSubmit(e) {
-    e.preventDefault();
-    let convert = loadFile(file);
-    setJSONFile(convert);
-  }
-
-  function convert(e) {
-    e.preventDefault();
-    let unique = uniqueDates(JSONFile.data);
-    setDates(unique);
-  }
 
   function sorted(e) {
-    e.preventDefault();
-    let sorted = sortTransactions(dates, JSONFile);
-    let count = sumTransactions(sorted);
-    setAllInfo({ ...allInfo, dayTotal: count, datedTransactions: sorted });
+    let count = sumTransactions(allInfo.datedTransactions.data);
+    setAllInfo({ ...allInfo, dayTotal: count });
     setIsFileLoaded(true);
   }
+
   return (
     <div className="App">
       <form>
@@ -64,10 +50,16 @@ function App() {
           onChange={onChange}
         ></input>
       </form>
-      <button onClick={onSubmit}>Click</button>
-      <button onClick={convert}>Click2</button>
       <button onClick={sorted}>Click3</button>
-      {isFileLoaded && <SideBar data={allInfo.dayTotal} />}
+      {isFileLoaded && (
+        <div>
+          <ul>
+            {Object.entries(allInfo.dayTotal).map(([date, amount]) => {
+              return <p key={date}>{`${date}: ${amount}`}</p>;
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

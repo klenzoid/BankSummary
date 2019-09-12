@@ -10,7 +10,7 @@
 import moment from "moment";
 export function sortTransactions(uniqueDates, rawData) {
   var sortedTransactions = uniqueDates;
-  var data = rawData.data;
+  var data = rawData;
   for (var i = 0, l = data.length - 1; i < l; i++) {
     var dataPoint = moment(data[i][0]).format("MMMM Do YYYY");
     var dataPointInfo = data[i].slice(1);

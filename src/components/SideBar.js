@@ -1,13 +1,21 @@
 import React from "react";
 
-const SideBar = data => {
-  var arrayOfDates = Object.keys(data.data);
+const SideBar = props => {
+  var datedTransactions = [];
+
+  for (let [date, amount] of Object.entries(props.totals)) {
+    datedTransactions.push([date, amount]);
+  }
   return (
     <div>
       <ul>
-        {arrayOfDates.map(date => (
-          <li>{date}</li>
-        ))}
+        {datedTransactions.map(i => {
+          return (
+            <li key={i[0]}>
+              {i[0]}: ${i[1]}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

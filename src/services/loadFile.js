@@ -10,13 +10,17 @@
 //{data: [[transaction]]}
 
 import * as Papa from "papaparse";
-
+import { uniqueDates } from "./uniqueDates";
+import { sortTransactions } from "./sortTransactions";
 export function loadFile(file) {
-  var x = {};
+  var sortedTransactions = {};
   Papa.parse(file, {
     complete: function(result) {
-      x.data = result.data;
+      sortedTransactions.data = result.data;
+      var listOfUniqueDates = uniqueDates(sortedTransactions.data);
+      var datedTransactions = sortTransactions(listOfUniqueDates, result.data);
+      sortedTransactions.data = datedTransactions;
     }
   });
-  return x;
+  return sortedTransactions;
 }
