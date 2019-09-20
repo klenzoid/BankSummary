@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <form>
+      <form className="inputFile">
         <input
           type="file"
           name="file"
@@ -50,18 +50,24 @@ function App() {
           onChange={onChange}
         ></input>
       </form>
-      <button onClick={sorted}>Click3</button>
+      <button className="inputFileSubmit" onClick={sorted}>
+        Click3
+      </button>
 
-      {isFileLoaded && (
-        <SideBar selectDate={setSelectedDate} totalData={allInfo.dayTotal} />
-      )}
+      <div className="sideBar">
+        {isFileLoaded && (
+          <SideBar selectDate={setSelectedDate} totalData={allInfo.dayTotal} />
+        )}
+      </div>
 
-      {selectedDate && (
-        <MainContent
-          selectDate={selectedDate}
-          datedTransactions={allInfo.datedTransactions.data}
-        />
-      )}
+      <div className="mainContent">
+        {selectedDate && (
+          <MainContent
+            selectDate={selectedDate}
+            datedTransactions={allInfo.datedTransactions.data}
+          />
+        )}
+      </div>
     </div>
   );
 }

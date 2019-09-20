@@ -20,7 +20,7 @@ const MainContent = ({ selectDate, datedTransactions }) => {
   }
   return (
     <div>
-      <table>
+      <table className="mainContentTable">
         <thead>
           <tr>
             <th>Amount</th>
