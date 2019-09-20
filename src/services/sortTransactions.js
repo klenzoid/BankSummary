@@ -1,12 +1,11 @@
 // DESCRIPTION: gets all transactions in a single day
 
 // INPUTS
-// uniqueDates -> object with date:emptyArray as key:value pair
-// rawData -> object that contains relevent data in data attribute
-// rawData.data -> array of arrays -> [[date, $amount, null, description, location]]
+// date -> selected date as a string
+// datedTransactions -> object with date:[transactions] as key:value pair
 
 // OUTPUTS
-// object with date: [all transactions on that date] as key:value pairs
+// display the dated transactions for selected date
 import moment from "moment";
 export function sortTransactions(uniqueDates, rawData) {
   var sortedTransactions = uniqueDates;

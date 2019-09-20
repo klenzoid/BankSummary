@@ -3,12 +3,10 @@ import "./App.css";
 
 // Functions
 import { loadFile } from "./services/loadFile";
-import { sortTransactions } from "./services/sortTransactions";
 import { sumTransactions } from "./services/sumTransactions";
-
 // Components
 import SideBar from "./components/SideBar";
-
+import MainContent from "./components/MainContent";
 function App() {
   // States to load file into app
 
@@ -18,6 +16,8 @@ function App() {
   // user uploaded file, not processed yet
   // raw file, should be csv
   const [file, setFile] = useState("");
+
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const [allInfo, setAllInfo] = useState({
     dayTotal: null,
@@ -51,14 +51,16 @@ function App() {
         ></input>
       </form>
       <button onClick={sorted}>Click3</button>
+
       {isFileLoaded && (
-        <div>
-          <ul>
-            {Object.entries(allInfo.dayTotal).map(([date, amount]) => {
-              return <p key={date}>{`${date}: ${amount}`}</p>;
-            })}
-          </ul>
-        </div>
+        <SideBar selectDate={setSelectedDate} totalData={allInfo.dayTotal} />
+      )}
+
+      {selectedDate && (
+        <MainContent
+          selectDate={selectedDate}
+          datedTransactions={allInfo.datedTransactions.data}
+        />
       )}
     </div>
   );
