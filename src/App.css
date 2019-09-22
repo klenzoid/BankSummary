@@ -3,55 +3,73 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "inputFile . . ."
-    "inputFileSubmit . . ."
+    ". inputFile inputFile ."
+    ". inputFileSubmit inputFileSubmit ."
     "sideBar mainContent mainContent mainContent"
     "sideBar mainContent mainContent mainContent"
     "sideBar mainContent mainContent mainContent"
     "sideBar mainContent mainContent mainContent";
 
   text-align: center;
+  background-color: #000000;
 }
 
 /* INPUT FILE */
 .inputFile {
   grid-area: inputFile;
 }
+input[type="file"] {
+  color: white;
+}
 .inputFileSubmit {
   grid-area: inputFileSubmit;
+  width: 25%;
+  margin: 0 auto;
+  margin-bottom: 5%;
 }
 /*SIDEBAR */
 .sideBar {
   grid-area: sideBar;
-  border-right: 1px red solid;
 }
 .sideBarContent {
   display: block;
-  margin: 1% auto;
+  margin: 0 auto;
+  border: #4c4c4c 1px solid;
+  padding: 3%;
+  width: 75%;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+.sideBarContent:hover {
+  background-color: #fd8263;
 }
 
 /* MAIN CONTENT */
 .mainContent {
   grid-area: mainContent;
 }
+
 .mainContentTable {
   margin: 0 auto;
+  width: 95%;
+  border-collapse: collapse;
 }
 .mainContentTable td,
 .mainContentTable th {
-  border: 1px solid black;
   padding: 8px;
+  color: white;
+  border: 1px solid #4c4c4c;
 }
-.mainContentTable tr:nth-child(odd) {
-  background-color: #f2f2f2;
+.mainContentTable tr {
+  background-color: #323232;
 }
 .mainContentTable tr:hover {
-  background-color: lightblue;
+  background-color: #666666;
 }
 .mainContentTable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: blue;
+  background-color: #191919;
   color: white;
 }

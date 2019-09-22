@@ -51,12 +51,16 @@ function App() {
         ></input>
       </form>
       <button className="inputFileSubmit" onClick={sorted}>
-        Click3
+        Load File
       </button>
 
       <div className="sideBar">
         {isFileLoaded && (
-          <SideBar selectDate={setSelectedDate} totalData={allInfo.dayTotal} />
+          <SideBar
+            viewDate={selectedDate}
+            selectDate={setSelectedDate}
+            totalData={allInfo.dayTotal}
+          />
         )}
       </div>
 

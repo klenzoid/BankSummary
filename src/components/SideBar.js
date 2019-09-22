@@ -1,6 +1,6 @@
 import React from "react";
 
-const SideBar = ({ selectDate, totalData }) => {
+const SideBar = ({ viewDate, selectDate, totalData }) => {
   var datedTransactions = Object.entries(totalData).map(([date, amount]) => {
     return (
       <button
@@ -13,12 +13,21 @@ const SideBar = ({ selectDate, totalData }) => {
       </button>
     );
   });
+  var noWrap = {
+    whiteSpace: "nowrap",
+    color: "white"
+  };
+
+  var userPickDate = {
+    color: "#fd8263"
+  };
 
   return (
     <div>
-      {/* <select onChange={e => selectDate(e.target.value)}> */}
+      <h2 style={noWrap}>
+        Viewing: <span style={userPickDate}>{viewDate}</span>
+      </h2>
       {datedTransactions}
-      {/* </select> */}
     </div>
   );
 };
