@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SideBar = ({ viewDate, selectDate, totalData }) => {
+  function handleOnclick(e) {
+    selectDate(e.target.value);
+  }
   var datedTransactions = Object.entries(totalData).map(([date, amount]) => {
     return (
       <button
-        className="sideBarContent"
-        onClick={e => selectDate(e.target.value)}
+        className={`sideBarContent`}
+        onClick={e => handleOnclick(e)}
         value={date}
         key={date}
       >
@@ -13,6 +16,7 @@ const SideBar = ({ viewDate, selectDate, totalData }) => {
       </button>
     );
   });
+
   var noWrap = {
     whiteSpace: "nowrap",
     color: "white"

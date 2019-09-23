@@ -43,6 +43,9 @@ input[type="file"] {
 .sideBarContent:hover {
   background-color: #fd8263;
 }
+.sideBarContent:focus {
+  background: #fd8263;
+}
 
 /* MAIN CONTENT */
 .mainContent {

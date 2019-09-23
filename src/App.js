@@ -67,6 +67,7 @@ function App() {
       <div className="mainContent">
         {selectedDate && (
           <MainContent
+            dayTotal={allInfo.dayTotal[selectedDate]}
             selectDate={selectedDate}
             datedTransactions={allInfo.datedTransactions.data}
           />

@@ -1,7 +1,7 @@
 import React from "react";
 import { getForDate } from "../services/getForDate";
 
-const MainContent = ({ selectDate, datedTransactions }) => {
+const MainContent = ({ selectDate, datedTransactions, dayTotal }) => {
   var selectedDate = getForDate(selectDate, datedTransactions);
 
   function getDateTransactions(date) {
@@ -30,7 +30,11 @@ const MainContent = ({ selectDate, datedTransactions }) => {
         </thead>
         <tbody>
           {getDateTransactions(selectedDate)}
-          <tr></tr>
+          <td style={{ backgroundColor: "#fd8263" }}>
+            NET AMOUNT: ${dayTotal}
+          </td>
+          <td style={{ backgroundColor: "#fd8263" }}></td>
+          <td style={{ backgroundColor: "#fd8263" }}></td>
         </tbody>
       </table>
     </div>
