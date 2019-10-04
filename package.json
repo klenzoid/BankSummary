@@ -11,7 +11,7 @@
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
   },
-  "homepage": "https://JP-sDEV.github.io/bank-summary",
+  "homepage": "https://JP-sDEV.github.io/BankSummary",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
