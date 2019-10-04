@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bank-summary/static/css/main.80bea198.chunk.css",
-    "main.js": "/bank-summary/static/js/main.d97f413a.chunk.js",
-    "main.js.map": "/bank-summary/static/js/main.d97f413a.chunk.js.map",
-    "runtime~main.js": "/bank-summary/static/js/runtime~main.0037f9b8.js",
-    "runtime~main.js.map": "/bank-summary/static/js/runtime~main.0037f9b8.js.map",
-    "static/js/2.d27bfc3f.chunk.js": "/bank-summary/static/js/2.d27bfc3f.chunk.js",
-    "static/js/2.d27bfc3f.chunk.js.map": "/bank-summary/static/js/2.d27bfc3f.chunk.js.map",
-    "index.html": "/bank-summary/index.html",
-    "precache-manifest.85bb0601b46077617d1f933cbddac25b.js": "/bank-summary/precache-manifest.85bb0601b46077617d1f933cbddac25b.js",
-    "service-worker.js": "/bank-summary/service-worker.js",
-    "static/css/main.80bea198.chunk.css.map": "/bank-summary/static/css/main.80bea198.chunk.css.map"
+    "main.css": "/BankSummary/static/css/main.80bea198.chunk.css",
+    "main.js": "/BankSummary/static/js/main.cf1adff3.chunk.js",
+    "main.js.map": "/BankSummary/static/js/main.cf1adff3.chunk.js.map",
+    "runtime~main.js": "/BankSummary/static/js/runtime~main.0ed09438.js",
+    "runtime~main.js.map": "/BankSummary/static/js/runtime~main.0ed09438.js.map",
+    "static/js/2.d27bfc3f.chunk.js": "/BankSummary/static/js/2.d27bfc3f.chunk.js",
+    "static/js/2.d27bfc3f.chunk.js.map": "/BankSummary/static/js/2.d27bfc3f.chunk.js.map",
+    "index.html": "/BankSummary/index.html",
+    "precache-manifest.e5b4adfcd3c002c58e5969d9a3304248.js": "/BankSummary/precache-manifest.e5b4adfcd3c002c58e5969d9a3304248.js",
+    "service-worker.js": "/BankSummary/service-worker.js",
+    "static/css/main.80bea198.chunk.css.map": "/BankSummary/static/css/main.80bea198.chunk.css.map"
   }
 }
